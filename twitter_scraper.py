@@ -4,16 +4,18 @@ Created on Mon Dec 28 15:08:24 2020
 
 @author: saelf
 """
-
+import os
 import tweepy
 import re
 #for encoding to the terminal window
 
+#retrieve API key from environment variables
+api_key = os.environ.get('TWEEPY_API_KEY')
 
-consumer_key = 'srQEXS4PpnLMElk9Y1RNNjeOm'
-consumer_secret = '8BuaAJK9U1C8rWaNo6141LODNtAB0y42Qwwc5HBBCy9vnp4gpP'
-access_token = '1346110123295600640-g48wSUL4tPPB7CPzpHXT3YUTsromD7'
-access_token_secret = 'y5BTKQpCysqdAVB1NcffnjPrk4zzEW575aUYA71NSdyRn'
+consumer_key = os.environ.get('CONSUMER_KEY')
+consumer_secret = os.environ.get('CONSUMER_SECRET')
+access_token = os.environ.get('ACCESS_TOKEN')
+access_token_secret = os.environ.get('ACCESS_TOKEN_SECRET')
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
